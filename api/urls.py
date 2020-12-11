@@ -22,5 +22,6 @@ urlpatterns = [
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='docs'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/quiz/', include('api.quiz.urls', namespace='quiz'))
+    path('api/quiz/', include('api.quiz.urls', namespace='quiz')),
+    path('api/ranking/', include('api.ranking.urls', namespace='raking'))
 ]
