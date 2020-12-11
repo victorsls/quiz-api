@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - "./:/app"
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://quiz:quiz@postgres:5432/quiz
+      SECRET_KEY: '6t6o_9(91+s=zl9!%i$i4dcza*cneq#_44%ms8oq3@n#0jwmx-'
+      DEBUG: "True"
+      ALLOWED_HOSTS: '.localhost, .herokuapp.com, 0.0.0.0'
+    entrypoint: bash docker-entrypoint.sh
+  postgres:
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_USER: quiz
+      POSTGRES_PASSWORD: quiz
+      POSTGRES_DB: quiz
