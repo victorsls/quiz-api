@@ -42,5 +42,5 @@ class AnswerQuizView(CreateAPIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save(**request.data)
-        response = {'success': 'Your answers have been sent successfully and soon the score will enter the Ranking.'}
-        return Response(response, status=status.HTTP_200_OK)
+        data = {'success': 'Your answers have been sent successfully and soon the score will enter the Ranking.'}
+        return Response(data, status=status.HTTP_200_OK)
