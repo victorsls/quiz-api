@@ -30,7 +30,7 @@ class QuizSerializer(serializers.ModelSerializer):
     questions = QuizQuestionSerializer(read_only=True, many=True)
 
     def validate(self, attrs):
-        if Question.objects.filter(category=attrs.get('category')).count() < 1:
+        if Question.objects.filter(category=attrs.get('category')).count() < 10:
             raise MinimumQuestionsException()
         return attrs
 
