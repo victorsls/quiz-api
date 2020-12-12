@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from api.quiz.models import Quiz
 
 
-class RakingAPIView(APIView):
+class RankingAPIView(APIView):
     """
     A simple APIView to list the Ranking
     """
