@@ -47,3 +47,4 @@ docker-compose run run_tests
 * Utilizar Celery para processar as respostas do Quiz em background.
 * Escrever testes automatizados para as customizações feitas nos Models e Views.
 * Utilizar UUID e não ID incremental
+* Separar os perfis de Player e Admin 
