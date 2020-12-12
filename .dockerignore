@@ -1,0 +1,5 @@
+venv
+docker-compose.yaml
+docker-entrypoint.sh
+Dockerfile
+README.md
